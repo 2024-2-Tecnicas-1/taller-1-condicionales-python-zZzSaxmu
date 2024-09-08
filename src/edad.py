@@ -1,22 +1,16 @@
-from datetime import datetime
-def evaluar(dia, mes, anno):
-    # TODO: Coloca aquí el código del ejercicio 6: Edad
-    from datetime import datetime
+from time import localtime
+def evaluar(dia_nac, mes_nac, anno_nac):
+    t = localtime()
+    dia_actual = t.tm_mday
+    mes_actual = t.tm_mon
+    anno_actual = t.tm_year
 
-def calcular_edad(dia, mes, año):
-    fecha_actual = datetime.now()
-    edad = fecha_actual.year - año
-    if (fecha_actual.month, fecha_actual.day) < (mes, dia):
+    edad = anno_actual - anno_nac
+
+    if (mes_nac > mes_actual) or (mes_nac == mes_actual and dia_nac > dia_actual):
         edad -= 1
-    return edad
 
-if __name__ == '__main__':
-    dia = int(input("Día de nacimiento: "))
-    mes = int(input("Mes de nacimiento: "))
-    año = int(input("Año de nacimiento: "))
-    
-    edad = calcular_edad(dia, mes, año)
-    print(f"Usted tiene {edad} años")
+    return f"Usted tiene {edad} años"
 
 
 if __name__ == '__main__':

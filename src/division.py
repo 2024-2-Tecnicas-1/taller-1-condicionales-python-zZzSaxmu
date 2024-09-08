@@ -1,12 +1,15 @@
 def evaluar(dividendo, divisor):
     cociente = dividendo // divisor
     residuo = dividendo % divisor
-    
-    if residuo == 0:
-        respuesta = f"La división es exacta.\nCociente: {cociente}\nResiduo: {residuo}"
+
+    if residuo ==0:
+     respuesta = "La división es exacta. \n" \
+            "Cociente: " + str(cociente) + "\n" \
+            "Residuo: " + str(residuo)
     else:
-        respuesta = f"La división no es exacta.\nCociente: {cociente}\nResiduo: {residuo}"
-    
+        respuesta = "La división no es exacta. \n" \
+            "Cociente: " + str(cociente) + "\n" \
+            "Residuo: " + str(residuo)
     return respuesta
 
 if __name__ == '__main__':

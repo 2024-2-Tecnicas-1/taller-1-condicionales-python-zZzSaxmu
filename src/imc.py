@@ -1,21 +1,27 @@
 def evaluar(peso, estatura, edad):
+ 
     imc = peso / (estatura ** 2)
     
+    # Determinar el riesgo según la tabla
     if edad < 45:
-        if imc < 22:
-            return "Riesgo bajo"
+        if imc < 22.0:
+            return "bajo"
         else:
-            return "Riesgo medio"
+            return "medio"
     else:
-        if imc < 22:
-            return "Riesgo medio"
+        if imc < 22.0:
+            return "medio"
         else:
-            return "Riesgo alto"
+            return "alto"
+
 
 if __name__ == '__main__':
-    peso = int(input("Peso (kg): "))
-    estatura = float(input("Estatura (m): "))
-    edad = int(input("Edad: "))
-    
+    print("Peso:", end="")
+    peso = int(input())
+    print("Estatura:", end="")
+    estatura = float(input())
+    print("Edad:", end="")
+    edad = int(input())
+        
     respuesta = evaluar(peso, estatura, edad)
     print(respuesta)

@@ -1,18 +1,21 @@
 def evaluar(a, b, c):
     if a + b > c and a + c > b and b + c > a:
         if a == b == c:
-            return "Triángulo equilátero"
+            return "El triángulo es equilátero"
         elif a == b or a == c or b == c:
-            return "Triángulo isósceles"
+            return "El triángulo es isósceles"
         else:
-            return "Triángulo escaleno"
+            return "El triángulo es escaleno"
     else:
-        return "Triángulo inválido"
+        return "No es un triángulo válido"
 
 if __name__ == '__main__':
-    a = float(input("a: "))
-    b = float(input("b: "))
-    c = float(input("c: "))
-    
+    print("a:", end="")
+    a = float(input())
+    print("b:", end="")
+    b = float(input())
+    print("c:", end="")
+    c = float(input())
+        
     respuesta = evaluar(a, b, c)
     print(respuesta)
